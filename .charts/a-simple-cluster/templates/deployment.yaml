@@ -17,11 +17,11 @@ spec:
           image: {{ .Values.dockerImage }}
           imagePullPolicy: Always
           ports:
-            - containerPort: 87
+            - containerPort: 1487
           livenessProbe:
             httpGet:
               path: /health
-              port: 87
+              port: 1487
               scheme: HTTP
             initialDelaySeconds: 5
             periodSeconds: 15
@@ -29,7 +29,7 @@ spec:
           readinessProbe:
             httpGet:
               path: /readiness
-              port: 87
+              port: 1487
               scheme: HTTP
             initialDelaySeconds: 5
             timeoutSeconds: 1
